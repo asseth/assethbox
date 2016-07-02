@@ -1,0 +1,24 @@
+---
+# tasks file for devtools
+
+- name: install common editors via apt (vim/nano/gedit/emacs)
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - vim
+    - nano
+    - gedit 
+    - emacs
+
+- name: install common useful devtools(git/tig/htop/meld/curl/wget/gdebi)
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - vim
+    - git
+    - tig
+    - htop
+    - meld
+    - curl
+    - wget
+    - gdebi
+
+

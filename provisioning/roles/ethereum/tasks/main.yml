@@ -1,0 +1,11 @@
+---
+# tasks file for ethereum
+
+- name: add ethereum ppa's 
+  apt_repository: repo='ppa:{{ item }}'
+  with_items:
+    - ethereum/ethereum
+    - ethereum/ethereum-dev
+
+- name: install ethereum stuff
+  apt: pkg=ethereum
