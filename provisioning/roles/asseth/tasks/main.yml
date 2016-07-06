@@ -1,0 +1,5 @@
+---
+# tasks file for asseth
+
+- name: set asseth welcome message
+  template: src=99-footer.j2 dest=/etc/update-motd.d/99-footer mode=0755
