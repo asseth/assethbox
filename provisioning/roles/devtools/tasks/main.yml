@@ -6,7 +6,7 @@
   with_items:
     - vim
     - nano
-    - gedit 
+    - gedit
     - emacs
 
 - name: install common useful devtools(git/tig/htop/meld/curl/wget/gdebi)
@@ -20,5 +20,18 @@
     - curl
     - wget
     - gdebi
+    - zsh
+    - python-pip
+    - language-pack-fr
 
+- name: Install virtualenvwrapper
+  pip: name=virtualenvwrapper
 
+- name: zsh default shell
+  user: name=vagrant shell=/usr/bin/zsh
+
+- name: Get oh-my-zsh from git
+  git: repo=git://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh accept_hostkey=True update=no
+
+- name: Zsh conf
+  template: src=zshrc.j2 dest=/home/vagrant/.zshrc owner=vagrant group=vagrant
