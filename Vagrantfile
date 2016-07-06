@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "asseth"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.gui = false  
+    vb.gui = false
     vb.memory = "1024"
     vb.name = "asseth"
   end
