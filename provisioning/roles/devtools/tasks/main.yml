@@ -45,10 +45,11 @@
 - name: symlink vimrc
   file: src=/home/vagrant/.vim/vimrc dest=/home/vagrant/.vimrc owner=vagrant group=vagrant state=link
 
-- name: Get oh-my-zsh from git
+- name: Get vim solidity
   git: repo=https://github.com/tomlion/vim-solidity.git dest=/tmp/vim-solidity accept_hostkey=True update=no
 
-- copy: src=/tmp/vim-solidity/{{ item }} dest=/home/vagrant/.vim owner=vagrant group=vagrant
+- name: deploy solidity for vim
+  copy: src=/tmp/vim-solidity/{{ item }} dest=/home/vagrant/.vim owner=vagrant group=vagrant
   with_items: 
     - indent
     - ftdetect
