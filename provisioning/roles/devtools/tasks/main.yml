@@ -1,6 +1,15 @@
 ---
 # tasks file for devtools
 
+
+
+- name: install gui
+  apt: pkg={{ item }} state=installed
+  with_items: 
+    - language-pack-fr
+    - lxde
+
+
 - name: install common editors via apt (vim/nano/gedit/emacs)
   apt: pkg={{ item }} state=installed
   with_items:
@@ -8,6 +17,15 @@
     - nano
     - gedit
     - emacs
+- name: add atom ppa
+  apt_repository: repo='ppa:{{ item }}'
+  with_items:
+    - webupd8team/atom
+
+- name: install atom
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - atom
 
 - name: install common useful devtools(git/tig/htop/meld/curl/wget/gdebi)
   apt: pkg={{ item }} state=installed
@@ -54,7 +72,6 @@
     - indent
     - ftdetect
     - syntax
-
 
 - name: chown vagrant home dir
   file: dest=/home/vagrant owner=vagrant group=vagrant recurse=yes
