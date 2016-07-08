@@ -1,6 +1,15 @@
 ---
 # tasks file for devtools
 
+
+
+- name: install gui
+  apt: pkg={{ item }} state=installed
+  with_items: 
+    - language-pack-fr
+    - lxde
+
+
 - name: install common editors via apt (vim/nano/gedit/emacs)
   apt: pkg={{ item }} state=installed
   with_items:
@@ -8,6 +17,15 @@
     - nano
     - gedit
     - emacs
+- name: add atom ppa
+  apt_repository: repo='ppa:{{ item }}'
+  with_items:
+    - webupd8team/atom
+
+- name: install atom
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - atom
 
 - name: install common useful devtools(git/tig/htop/meld/curl/wget/gdebi)
   apt: pkg={{ item }} state=installed
@@ -35,3 +53,26 @@
 
 - name: Zsh conf
   template: src=zshrc.j2 dest=/home/vagrant/.zshrc owner=vagrant group=vagrant
+
+- name: create .vim directory
+  file: dest=/home/vagrant/.vim owner=vagrant group=vagrant state=directory
+
+- name: deploy vimrc
+  template: src=vimrc.j2 dest=/home/vagrant/.vim/vimrc owner=vagrant group=vagrant
+
+- name: symlink vimrc
+  file: src=/home/vagrant/.vim/vimrc dest=/home/vagrant/.vimrc owner=vagrant group=vagrant state=link
+
+- name: Get vim solidity
+  git: repo=https://github.com/tomlion/vim-solidity.git dest=/tmp/vim-solidity accept_hostkey=True update=no
+
+- name: deploy solidity for vim
+  copy: src=/tmp/vim-solidity/{{ item }} dest=/home/vagrant/.vim owner=vagrant group=vagrant
+  with_items: 
+    - indent
+    - ftdetect
+    - syntax
+
+- name: chown vagrant home dir
+  file: dest=/home/vagrant owner=vagrant group=vagrant recurse=yes
+
