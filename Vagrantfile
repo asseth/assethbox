@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "asseth"
-
+  
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
     vb.memory = "1024"
@@ -24,5 +24,6 @@ Vagrant.configure("2") do |config|
     sudo service ssh restart
     su - vagrant -c 'sshpass -p vagrant ssh-copy-id vagrant@asseth'
     su - vagrant -c 'ansible-playbook /vagrant/provisioning/bootstrap.yml -i /vagrant/provisioning/hosts -vvvv'
+    sudo reboot
   SHELL
 end
