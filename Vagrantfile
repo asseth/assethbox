@@ -12,6 +12,9 @@ Vagrant.configure("2") do |config|
     vb.name = "asseth"
   end
 
+  config.vm.network "forwarded_port", guest: 30303, host: 30303
+  config.vm.network "forwarded_port", guest: 8545, host: 8545
+
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     sudo apt-get install -y cowsay ansible sshpass
