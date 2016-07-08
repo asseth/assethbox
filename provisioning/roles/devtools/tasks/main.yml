@@ -31,7 +31,7 @@
   user: name=vagrant shell=/usr/bin/zsh
 
 - name: Get oh-my-zsh from git
-  git: repo=git://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh accept_hostkey=True update=no
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh accept_hostkey=True update=no
 
 - name: Zsh conf
   template: src=zshrc.j2 dest=/home/vagrant/.zshrc owner=vagrant group=vagrant
