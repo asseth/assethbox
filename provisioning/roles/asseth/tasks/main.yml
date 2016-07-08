@@ -5,10 +5,9 @@
   template: src=99-footer.j2 dest=/etc/update-motd.d/99-footer mode=0755
 
 - name: clone asseth projects
-  git: repo=https://github.com/asseth/dao1901.git dest=/home/vagrant/projects/{{ item }} 
+  git: repo=https://github.com/asseth/dao1901.git dest=/home/vagrant/projects/{{ item }}
   with_items:
   - dao1901
-  - assethbox
 
 - name: chown vagrant home folder to vagrant
   file:  dest=/home/vagrant owner=vagrant group=vagrant
