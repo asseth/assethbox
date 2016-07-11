@@ -5,7 +5,7 @@
 
 - name: install gui
   apt: pkg={{ item }} state=installed
-  with_items: 
+  with_items:
     - language-pack-fr
     - lxde
 
@@ -17,6 +17,7 @@
     - nano
     - gedit
     - emacs
+    
 - name: add atom ppa
   apt_repository: repo='ppa:{{ item }}'
   with_items:
@@ -68,11 +69,10 @@
 
 - name: deploy solidity for vim
   copy: src=/tmp/vim-solidity/{{ item }} dest=/home/vagrant/.vim owner=vagrant group=vagrant
-  with_items: 
+  with_items:
     - indent
     - ftdetect
     - syntax
 
 - name: chown vagrant home dir
   file: dest=/home/vagrant owner=vagrant group=vagrant recurse=yes
-
