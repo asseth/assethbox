@@ -1,14 +1,11 @@
 ---
 # tasks file for devtools
 
-
-
 - name: install gui
   apt: pkg={{ item }} state=installed
   with_items:
     - language-pack-fr
     - lxde
-
 
 - name: install common editors via apt (vim/nano/gedit/emacs)
   apt: pkg={{ item }} state=installed
@@ -17,6 +14,7 @@
     - nano
     - gedit
     - emacs
+
 - name: add atom and sublime ppa
   apt_repository: repo='ppa:{{ item }}'
   with_items:

@@ -5,7 +5,29 @@
   with_items:
     - build-essential
     - libgmp3-dev
-    - golang
+
+- name : download go 1.6.2
+  get_url: url=https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz dest=/tmp/go1.6.2.linux-amd64.tar.gz validate_certs=no
+
+- name: check go extraction
+  stat: path=/tmp/go1.6.2.linux-amd64
+  register: go_extracted
+
+- name: unarchive go
+  unarchive: src=/tmp/go1.6.2.linux-amd64.tar.gz dest=/opt copy=no
+  when: not go_extracted.stat.exists
 
 - name: Clone geth 1.4.5 (no bugs with private network)
-  git: repo=https://github.com/ethereum/go-ethereum.git dest=/home/vagrant/go-ethereum accept_hostkey=True version=a269a71
+  git: repo=https://github.com/ethereum/go-ethereum.git dest=/opt/go-ethereum accept_hostkey=True version=a269a71
+
+- name: check geth build
+  stat: path=/tmp/go1.6.2.linux-amd64
+  register: geth_build
+
+- name: make geth
+  command: chdir=/opt/go-ethereum make
+  environment:
+    GOROOT: /opt/go
+    GOPATH: /home/vagrant/go
+    PATH: /opt/go/bin:{{ ansible_env.PATH }}
+  when: not geth_build.stat.exists
