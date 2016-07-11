@@ -5,15 +5,17 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "asseth"
-  
+
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
-    vb.memory = "1024"
+    vb.memory = "4096"
     vb.name = "asseth"
   end
 
   config.vm.network "forwarded_port", guest: 30303, host: 30303
   config.vm.network "forwarded_port", guest: 8545, host: 8545
+
+  config.vm.synced_folder ".", "/vagrant", type: "rsync"
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
