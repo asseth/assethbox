@@ -57,6 +57,9 @@
 - name: Get oh-my-zsh from git
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh accept_hostkey=True update=no
 
+- name: Give oh-my-zsh permissions for vagrant
+  file: dest=/home/vagrant/.oh-my-zsh owner=vagrant group=vagrant recurse=yes
+
 - name: Zsh conf
   template: src=zshrc.j2 dest=/home/vagrant/.zshrc owner=vagrant group=vagrant
 
@@ -78,6 +81,3 @@
     - indent
     - ftdetect
     - syntax
-
-- name: chown vagrant home dir
-  file: dest=/home/vagrant owner=vagrant group=vagrant recurse=yes
