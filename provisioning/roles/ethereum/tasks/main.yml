@@ -31,3 +31,11 @@
     GOPATH: /home/vagrant/go
     PATH: /opt/go/bin:{{ ansible_env.PATH }}
   when: not geth_build.stat.exists
+
+- name: add ethereum ppa
+  apt_repository: repo='ppa:{{ item }}' update_cache=yes
+  with_items:
+    - ethereum/ethereum
+
+- name: install solc
+  apt: pkg=solc state=installed
