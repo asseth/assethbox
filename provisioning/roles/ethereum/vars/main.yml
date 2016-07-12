@@ -1,0 +1,4 @@
+---
+# vars file for ethereum
+
+go: go1.6.2.linux-386
