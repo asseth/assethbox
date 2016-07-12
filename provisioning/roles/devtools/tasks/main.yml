@@ -47,6 +47,9 @@
     - python-pip
     - language-pack-fr
     - terminator
+    - firefox
+    - firefox-locale-fr
+    - firefox-locale-en
 
 - name: Install virtualenvwrapper
   pip: name=virtualenvwrapper
