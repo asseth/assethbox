@@ -4,10 +4,18 @@
 - name: set asseth welcome message
   template: src=99-footer.j2 dest=/etc/update-motd.d/99-footer mode=0755
 
+- name: create asseth projects folder
+  file: path=/home/vagrant/projects owner=vagrant group=vagrant
+
 - name: clone asseth projects
   git: repo=https://github.com/asseth/dao1901.git dest=/home/vagrant/projects/{{ item }}
   with_items:
   - dao1901
 
-- name: chown vagrant home folder to vagrant
-  file:  dest=/home/vagrant owner=vagrant group=vagrant
+- name: Give permissions to vagrant git repo
+  file: dest=/path/to/symlink owner=vagrant group=vagrant recurse=yes
+  with_items:
+  - dao1901
+
+# - name: chown vagrant home folder to vagrant
+#   file:  dest=/home/vagrant owner=vagrant group=vagrant
