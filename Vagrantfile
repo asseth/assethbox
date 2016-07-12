@@ -19,12 +19,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    sudo apt-get install -y cowsay ansible sshpass
+    sudo apt-get install -y cowsay ansible
     su - vagrant -c 'ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -q -N ""'
     su - vagrant -c 'cat /home/vagrant/.ssh/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys'
     su - vagrant -c 'echo StrictHostKeyChecking no >> /home/vagrant/.ssh/config'
     sudo service ssh restart
-    su - vagrant -c 'sshpass -p vagrant ssh-copy-id vagrant@asseth'
     su - vagrant -c 'ansible-playbook /vagrant/provisioning/bootstrap.yml -i /vagrant/provisioning/hosts -vvvv'
     sudo reboot
   SHELL
