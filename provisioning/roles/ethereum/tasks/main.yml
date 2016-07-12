@@ -21,7 +21,7 @@
   git: repo=https://github.com/ethereum/go-ethereum.git dest=/opt/go-ethereum accept_hostkey=True version=a269a71
 
 - name: check geth build
-  stat: path=/tmp/go1.6.2.linux-amd64
+  stat: path=/opt/go-ethereum/build/bin/geth
   register: geth_build
 
 - name: make geth
