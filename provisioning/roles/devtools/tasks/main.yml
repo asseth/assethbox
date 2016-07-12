@@ -4,8 +4,13 @@
 - name: install gui
   apt: pkg={{ item }} state=installed
   with_items:
-    - language-pack-fr
     - lxde
+
+- name: create xorg custom conf
+  file: dest=/etc/X11/xorg.conf.d state=directory
+
+- name: xorg keyboard fr
+  template: src=00-keyboard.conf.j2 dest=/etc/X11/xorg.conf.d/00-keyboard.conf
 
 - name: install common editors via apt (vim/nano/gedit/emacs)
   apt: pkg={{ item }} state=installed
