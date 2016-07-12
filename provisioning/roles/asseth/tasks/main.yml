@@ -18,6 +18,4 @@
   with_items:
   - dao1901
   - workshop
-
-# - name: chown vagrant home folder to vagrant
-#   file:  dest=/home/vagrant owner=vagrant group=vagrant
+  
