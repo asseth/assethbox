@@ -7,7 +7,7 @@
     - libgmp3-dev
 
 - name : download go 1.6.2
-  get_url: url=https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz dest=/tmp/go1.6.2.linux-amd64.tar.gz validate_certs=no
+  get_url: url=https://storage.googleapis.com/golang/go1.6.2.linux-386.tar.gz dest=/tmp/go1.6.2.linux-amd64.tar.gz validate_certs=no
 
 - name: check go extraction
   stat: path=/tmp/go1.6.2.linux-amd64
