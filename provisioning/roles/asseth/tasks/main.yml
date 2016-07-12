@@ -11,11 +11,13 @@
   git: repo=https://github.com/asseth/dao1901.git dest=/home/vagrant/projects/{{ item }}
   with_items:
   - dao1901
+  - workshop
 
 - name: Give permissions to vagrant git repo
   file: dest=/path/to/symlink owner=vagrant group=vagrant recurse=yes
   with_items:
   - dao1901
+  - workshop
 
 # - name: chown vagrant home folder to vagrant
 #   file:  dest=/home/vagrant owner=vagrant group=vagrant
