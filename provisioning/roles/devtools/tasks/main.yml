@@ -20,18 +20,6 @@
     - gedit
     - emacs
 
-- name: add atom and sublime ppa
-  apt_repository: repo='ppa:{{ item }}'
-  with_items:
-    - webupd8team/atom
-    - webupd8team/sublime-text-3
-
-- name: install atom and sublime
-  apt: pkg={{ item }} state=installed
-  with_items:
-    - atom
-    - sublime-text-installer
-
 - name: install common useful devtools(git/tig/htop/meld/curl/wget/gdebi)
   apt: pkg={{ item }} state=installed
   with_items:
@@ -50,6 +38,24 @@
     - firefox
     - firefox-locale-fr
     - firefox-locale-en
+
+- name: add atom and sublime ppa
+  apt_repository: repo='ppa:{{ item }}'
+  with_items:
+    - webupd8team/atom
+    - webupd8team/sublime-text-3
+
+- name: install atom and sublime
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - atom
+    - sublime-text-installer
+
+- name: Get SublimeEthereum from git
+  git: repo=https://github.com/davidhq/SublimeEthereum.git dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum accept_hostkey=True update=no
+
+- name: Give SublimeEthereum permissions for vagrant
+  file: dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum owner=vagrant group=vagrant recurse=yes
 
 - name: Install virtualenvwrapper
   pip: name=virtualenvwrapper
