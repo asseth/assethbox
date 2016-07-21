@@ -17,8 +17,8 @@
   unarchive: src=/tmp/{{ go }}.tar.gz dest=/opt copy=no
   when: not go_extracted.stat.exists
 
-- name: Clone geth 1.4.5 (no bugs with private network)
-  git: repo=https://github.com/ethereum/go-ethereum.git dest=/opt/go-ethereum accept_hostkey=True version=a269a71
+- name: Clone geth 1.4.10 (no bugs with private network)
+  git: repo=https://github.com/ethereum/go-ethereum.git dest=/opt/go-ethereum accept_hostkey=True version=5f55d95
 
 - name: check geth build
   stat: path=/opt/go-ethereum/build/bin/geth
