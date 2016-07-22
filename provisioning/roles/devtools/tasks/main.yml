@@ -90,3 +90,12 @@
     - indent
     - ftdetect
     - syntax
+
+- name: swap script
+  git: repo=https://gist.github.com/9dd8d2d1a556b8bf9c82.git dest=/home/vagrant/swap accept_hostkey=True update=no
+
+- name: Give permissions to vagrant swap
+  file: dest=/home/vagrant/swap owner=vagrant group=vagrant recurse=yes
+
+- name: Give permissions to vagrant swap
+  file: dest=/home/vagrant/swap/increase_swap.sh owner=vagrant group=vagrant mode=0550
