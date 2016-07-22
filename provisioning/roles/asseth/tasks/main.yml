@@ -12,3 +12,9 @@
   with_items:
   - dao1901
   - workshop
+
+- name: Give permissions to vagrant git repo
+  file: dest=/home/vagrant/projects/{{ item }} owner=vagrant group=vagrant recurse=yes
+  with_items:
+  - dao1901
+  - workshop
