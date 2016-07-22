@@ -8,7 +8,7 @@
   file: path=/home/vagrant/projects owner=vagrant group=vagrant
 
 - name: clone asseth projects
-  git: repo=https://github.com/asseth/dao1901.git dest=/home/vagrant/projects/{{ item }}
+  git: repo=https://github.com/asseth/{{ item }}.git dest=/home/vagrant/projects/{{ item }}
   with_items:
   - dao1901
   - workshop
