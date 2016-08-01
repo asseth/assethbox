@@ -14,7 +14,11 @@ In the VM:
 
 **Useful common tools for developers**
 
-## Simple install
+## Simplest install
+
+Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/assethbox/assethbox-1.ova) and import it in virtualbox
+
+## Vagrant install
 
     vagrant init asseth/assethbox; vagrant up --provider virtualbox
 
