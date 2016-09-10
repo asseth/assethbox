@@ -109,4 +109,16 @@
 
 - name: install python35
   apt: pkg=python3.5 state=installed
-  
+
+# Slack
+
+- name : download slack
+  get_url: url=https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.2-i386.deb dest=/tmp/slack-desktop-2.1.2-i386.deb validate_certs=no
+
+- name: check slack installed 
+  stat: path=/usr/bin/slack
+  register: slack_installed
+
+- name: install slack
+  command: sudo gdebi -n /tmp/slack-desktop-2.1.2-i386.deb
+  when: not slack_installed.stat.exists
