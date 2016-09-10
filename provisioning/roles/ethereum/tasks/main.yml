@@ -37,14 +37,15 @@
   with_items:
     - ethereum/ethereum
 
+#Solc
 - name: install solc
   apt: pkg=solc state=installed
+
+# mist
 
 - name: check mist download
   stat: path=/tmp/Ethereum-Wallet-linux32-0-8-1.zip
   register: mist_dl
-
-# mist
 
 - name: install usful package for mist
   apt: pkg={{ item }} state=installed
@@ -62,3 +63,8 @@
 - name: unarchive mist
   unarchive: src=/tmp/Ethereum-Wallet-linux32-0-8-1.zip dest=/opt copy=no
   when: not mist_extracted.stat.exists
+
+# chromium 
+
+- name: install chromium
+  apt: pkg=chromium-browser state=installed
