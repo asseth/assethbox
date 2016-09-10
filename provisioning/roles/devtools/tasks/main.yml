@@ -38,6 +38,8 @@
     - firefox
     - firefox-locale-fr
     - firefox-locale-en
+    - libssl-dev 
+    - openssl
 
 - name: add atom and sublime ppa
   apt_repository: repo='ppa:{{ item }}'
@@ -99,3 +101,12 @@
 
 - name: Give permissions to vagrant swap
   file: dest=/home/vagrant/swap/increase_swap.sh owner=vagrant group=vagrant mode=0550
+
+# install python3.5
+
+- name: add ppa for python35
+  apt_repository: repo='ppa:fkrull/deadsnakes' update_cache=yes
+
+- name: install python35
+  apt: pkg=python3.5 state=installed
+  
