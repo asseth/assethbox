@@ -2,4 +2,4 @@
 # vars file for ethereum
 
 go: go1.6.2.linux-386
-geth_version: fed692f
+geth_version: 5a6008e #v1.4.17
