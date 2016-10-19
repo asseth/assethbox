@@ -29,6 +29,8 @@ alias untarxz="tar -Jxvf"
 alias unrar="unrar x"
 alias mist="/opt/Ethereum-Wallet-linux32-0-8-1/Ethereum-Wallet"
 
+alias provision="ansible-playbook /vagrant/provisioning/bootstrap.yml -i /vagrant/provisioning/hosts -vvvv"
+
 export GOROOT=/opt/go
 export GOPATH=~/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
