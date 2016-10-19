@@ -32,13 +32,11 @@
     - wget
     - gdebi
     - zsh
-    - python-pip
-    - language-pack-fr
     - terminator
     - firefox
     - firefox-locale-fr
     - firefox-locale-en
-    - libssl-dev 
+    - libssl-dev
     - openssl
 
 - name: add atom and sublime ppa
@@ -121,13 +119,10 @@
 - name : download slack
   get_url: url=https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.2-i386.deb dest=/tmp/slack-desktop-2.1.2-i386.deb validate_certs=no
 
-- name: check slack installed 
+- name: check slack installed
   stat: path=/usr/bin/slack
   register: slack_installed
 
 - name: install slack
   command: sudo gdebi -n /tmp/slack-desktop-2.1.2-i386.deb
   when: not slack_installed.stat.exists
-
-
-
