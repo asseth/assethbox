@@ -42,29 +42,26 @@
   apt: pkg=solc state=installed
 
 # mist
-
-- name: check mist download
-  stat: path=/tmp/Ethereum-Wallet-linux32-0-8-1.zip
-  register: mist_dl
-
-- name: install usful package for mist
+- name: install useful package for mist
   apt: pkg={{ item }} state=installed
   with_items:
     - libxss1
 
-- name : download mist
-  get_url: url=https://github.com/ethereum/mist/releases/download/0.8.1/Ethereum-Wallet-linux32-0-8-1.zip dest=/tmp/Ethereum-Wallet-linux32-0-8-1.zip validate_certs=no
-  when: not mist_dl.stat.exists
-
-- name: check mist extraction
-  stat: path=/tmp/Ethereum-Wallet-linux32-0-8-1
-  register: mist_extracted
-
-- name: unarchive mist
-  unarchive: src=/tmp/Ethereum-Wallet-linux32-0-8-1.zip dest=/opt copy=no
-  when: not mist_extracted.stat.exists
-
-# chromium 
+- name: check mist installed
+  stat: path=/usr/local/bin/Mist
+  register: mist_installed
 
 - name: install chromium
   apt: pkg=chromium-browser state=installed
+
+- name : download mist
+  get_url:
+    url={{ mist_version_url_deb }}
+    dest=/tmp/
+    validate_certs=no
+    checksum="sha256:{{ mist_version_url_deb_checksum }}"
+  when: not mist_installed.stat.exists
+
+- name: install mist
+  command: chdir=/tmp sudo gdebi --non-interactive {{ mist_version_deb }}
+  when: not _installed.stat.exists
