@@ -5,7 +5,7 @@
   template: src=99-footer.j2 dest=/etc/update-motd.d/99-footer mode=0755
 
 - name: create asseth projects folder
-  file: path=/home/vagrant/projects owner=vagrant group=vagrant
+  file: path=/home/vagrant/projects state=directory owner=vagrant group=vagrant
 
 - name: clone asseth projects
   git: repo=https://github.com/asseth/{{ item }}.git dest=/home/vagrant/projects/{{ item }}
