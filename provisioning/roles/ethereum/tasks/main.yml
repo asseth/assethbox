@@ -64,4 +64,4 @@
 
 - name: install mist
   command: chdir=/tmp sudo gdebi --non-interactive {{ mist_version_deb }}
-  when: not _installed.stat.exists
+  when: not mist_installed.stat.exists
