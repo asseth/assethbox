@@ -38,6 +38,7 @@
     - firefox-locale-en
     - libssl-dev
     - openssl
+    - python-dev
 
 - name: add atom and sublime ppa
   apt_repository: repo='ppa:{{ item }}'
