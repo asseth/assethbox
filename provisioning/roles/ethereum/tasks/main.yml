@@ -65,3 +65,17 @@
 - name: install mist
   command: chdir=/tmp sudo gdebi --non-interactive {{ mist_version_deb }}
   when: not mist_installed.stat.exists
+
+# tasks file for populus
+- name: install populus dependencies
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - python3-dev
+    - python3-pip
+    - pkg-config
+    - libffi-dev
+    - python-cffi
+    - dh-autoreconf
+
+- name: Clone populus
+  git: repo=https://github.com/pipermerriam/populus.git dest=/opt/populus accept_hostkey=True
