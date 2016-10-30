@@ -74,8 +74,13 @@
     - python3-pip
     - pkg-config
     - libffi-dev
-    - python-cffi
     - dh-autoreconf
 
+- name: install newer version of setuptools
+  pip: name=setuptools version=28.7.1
+
+- name: install newer version of cffi
+  pip: name=cffi
+
 - name: Clone populus
-  git: repo=https://github.com/pipermerriam/populus.git dest=/opt/populus accept_hostkey=True
+  pip: name=populus version=1.4.0
