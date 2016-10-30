@@ -11,7 +11,10 @@
   git: repo=https://github.com/asseth/{{ item }}.git dest=/home/vagrant/projects/{{ item }}
   with_items:
   - dao1901
-  - workshop
+  - workshops
+  - yellowpaper
+  - slackit
+  - assethbox
 
 - name: Give permissions to vagrant git repo
   file: dest=/home/vagrant/projects owner=vagrant group=vagrant recurse=yes
