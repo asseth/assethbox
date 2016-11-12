@@ -31,8 +31,7 @@ Inside the VM (Non-exhaustive):
 
 ## Simplest install
 
-Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/assethbox/assethbox-1.ova) and import it in virtualbox
-[too old version, build it for the moment, instruction below]
+Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_v0.3.1.ova) and import it in virtualbox
 
 ## Vagrant install
 
