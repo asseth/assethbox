@@ -1,0 +1,4 @@
+---
+# vars file for devtools
+
+node_version: node-v6.9.1-linux-x86
