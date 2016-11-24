@@ -127,3 +127,21 @@
 - name: install slack
   command: sudo gdebi -n /tmp/slack-desktop-2.1.2-i386.deb
   when: not slack_installed.stat.exists
+
+# NPM
+
+- name: check slack installed
+  stat: path=/opt/{{ node_version }}/bin/npm
+  register: npm_installed
+
+- name : download node
+  get_url: url=https://nodejs.org/dist/v6.9.1/{{ node_version }}.tar.xz dest=/tmp/node-v6.9.1-linux-x86.tar.xz validate_certs=no
+  when: not npm_installed.stat.exists
+
+- name: unarchive node
+  unarchive: src=/tmp/{{ node_version }}.tar.xz dest=/tmp copy=no
+  when: not npm_installed.stat.exists
+
+- name: move node directory to /opt
+  command: mv /tmp/{{ node_version }} /opt
+  when: not npm_installed.stat.exists
