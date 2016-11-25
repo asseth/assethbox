@@ -23,6 +23,7 @@ Inside the VM (Non-exhaustive):
 * chat : slack
 * web : curl, wget, firefox
 * crypto : openssl
+* nodejs: node, npm
 
 **Projects**
 
