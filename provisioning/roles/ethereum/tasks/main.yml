@@ -86,12 +86,9 @@
   pip: name=populus version=1.4.1
 
 # PARITY
-# - name: Download rust setup
-#   get_url: url=https://sh.rustup.rs dest=/tmp/rustup.sh validate_certs=no
-#
-#
-# - name: install rust
-#   command: chdir=/tmp sh rustup.sh -y
+
+- name : download rust
+  get_url: url=https://sh.rustup.rs dest=/tmp/rustup.sh validate_certs=no
 
 - name: Clone parity
-  git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recurse=yes accept_hostkey=True
+  git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True
