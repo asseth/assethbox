@@ -83,7 +83,7 @@
   pip: name=cffi
 
 - name: Clone populus
-  pip: name=populus version=1.4.0
+  pip: name=populus version=1.4.1
 
 # PARITY
 # - name: Download rust setup
