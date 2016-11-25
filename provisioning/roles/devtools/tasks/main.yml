@@ -12,6 +12,9 @@
 - name: xorg keyboard fr
   template: src=00-keyboard.conf.j2 dest=/etc/X11/xorg.conf.d/00-keyboard.conf
 
+- name: add git ppa
+  apt_repository: repo='ppa:git-core/ppa'
+
 - name: install common editors via apt (vim/nano/gedit/emacs)
   apt: pkg={{ item }} state=installed
   with_items:
@@ -23,8 +26,8 @@
 - name: install common useful devtools(git/tig/htop/meld/curl/wget/gdebi)
   apt: pkg={{ item }} state=installed
   with_items:
-    - vim
     - git
+    - vim
     - tig
     - htop
     - meld
@@ -40,7 +43,7 @@
     - openssl
     - python-dev
 
-- name: add atom and sublime ppa
+- name: add atom and sublime ppa's
   apt_repository: repo='ppa:{{ item }}'
   with_items:
     - webupd8team/atom
@@ -51,6 +54,9 @@
   with_items:
     - atom
     - sublime-text-installer
+
+- name: install git
+  apt: pkg=git state=installed
 
 - name: Get SublimeEthereum from git
   git: repo=https://github.com/davidhq/SublimeEthereum.git dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum accept_hostkey=True update=no
