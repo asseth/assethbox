@@ -34,10 +34,6 @@ Inside the VM (Non-exhaustive):
 
 Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_v0.3.2.ova) and import it in virtualbox
 
-## Vagrant install
-
-    vagrant init asseth/assethbox; vagrant up --provider virtualbox
-
 ## Build from sources
 
     git clone https://github.com/asseth/assethbox.git
