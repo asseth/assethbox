@@ -33,6 +33,7 @@ Inside the VM (Non-exhaustive):
 ## Simplest install
 
 Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_v0.4.0.ova) and import it in virtualbox
+Import it in virtualbox ('Fichier/Importer un appareil virtuel') for french people
 
 ## Build from sources
 
