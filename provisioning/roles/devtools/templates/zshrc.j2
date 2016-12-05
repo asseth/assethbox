@@ -33,7 +33,6 @@ alias provision="ansible-playbook /vagrant/provisioning/bootstrap.yml -i /vagran
 
 export GOROOT=/opt/go
 export GOPATH=~/go
-export NODEDIR=/opt/{{ node_version }}
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$NODEDIR/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 setxkbmap fr
