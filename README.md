@@ -7,6 +7,7 @@ Inside the VM (Non-exhaustive):
 * geth
 * mist
 * populus
+* truffle
 
 **Editors**
 
