@@ -86,9 +86,14 @@
   pip: name=populus version=1.4.1
 
 # Truffle
+
+- name: check mist installed
+  stat: path=/opt/{{ node_version }}/lib/node_modules/truffle
+  register: truffle_installed
+
 - name: install truffle
   command: npm -g install truffle
-
+  when: not truffle_installed.stat.exists
 
 # PARITY
 
