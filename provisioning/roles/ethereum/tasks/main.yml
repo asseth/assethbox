@@ -85,6 +85,11 @@
 - name: Clone populus
   pip: name=populus version=1.4.1
 
+# Truffle
+- name: install truffle
+  command: npm -g install truffle
+
+
 # PARITY
 
 - name : download rust
