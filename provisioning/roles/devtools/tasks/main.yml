@@ -61,6 +61,12 @@
 - name: Get SublimeEthereum from git
   git: repo=https://github.com/davidhq/SublimeEthereum.git dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum accept_hostkey=True update=no
 
+- name: Get GitSavvy from git
+  git: repo=https://github.com/divmain/GitSavvy.git dest=/home/vagrant/.config/sublime-text-3/Packages/GitSavvy accept_hostkey=True update=no
+
+- name: Get Pretty JSON from git
+  git: repo=https://github.com/dzhibas/SublimePrettyJson.git dest=/home/vagrant/.config/sublime-text-3/Packages/PrettyJson accept_hostkey=True update=no
+
 - name: Give SublimeEthereum permissions for vagrant
   file: dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum owner=vagrant group=vagrant recurse=yes
 
