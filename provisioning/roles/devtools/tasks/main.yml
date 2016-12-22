@@ -157,3 +157,14 @@
 - name: move node directory to /opt
   command: mv /tmp/{{ node_version }} /opt
   when: not npm_installed.stat.exists
+
+- name: symlink node and npm
+  file:
+    src: /opt/{{ node_version }}/bin/{{ item }}
+    dest: /usr/local/bin/{{ item }}
+    owner: root
+    group: root
+    state: link
+  with_items:
+    - node
+    - npm
