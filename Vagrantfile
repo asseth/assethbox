@@ -17,6 +17,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/vagrant", type: "rsync"
 
+  config.vm.define "assethbox" do |assethbox|
+  end
+
+
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     sudo apt-get install -y cowsay sshpass language-pack-fr python-pip
