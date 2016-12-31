@@ -3,6 +3,7 @@
   sudo: yes
   roles:
     - devtools
+    - sublimepackages
     - ethereum
     - asseth
     - permissions
