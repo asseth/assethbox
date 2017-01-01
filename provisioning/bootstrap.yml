@@ -1,8 +1,10 @@
 - hosts: assethbox
   user: vagrant
-  sudo: yes
+  become: yes
   roles:
     - devtools
+    - sublimepackages
     - ethereum
     - asseth
     - permissions
+    - bugfixes
