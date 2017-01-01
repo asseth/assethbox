@@ -125,7 +125,8 @@
   register: slack_installed
 
 - name: install slack
-  command: sudo gdebi -n /tmp/slack-desktop-2.1.2-i386.deb
+  command: gdebi -n /tmp/slack-desktop-2.1.2-i386.deb
+  become: yes
   when: not slack_installed.stat.exists
 
 # NPM

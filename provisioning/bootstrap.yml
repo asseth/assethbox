@@ -1,6 +1,6 @@
 - hosts: assethbox
   user: vagrant
-  sudo: yes
+  become: yes
   roles:
     - devtools
     - sublimepackages
