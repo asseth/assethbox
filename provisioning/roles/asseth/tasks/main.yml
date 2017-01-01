@@ -18,3 +18,7 @@
 
 - name: Give permissions to vagrant git repo
   file: dest=/home/vagrant/projects owner=vagrant group=vagrant recurse=yes
+
+- name: set timezone to Europe/Paris
+  command: timedatectl set-timezone Europe/Paris
+  become: yes
