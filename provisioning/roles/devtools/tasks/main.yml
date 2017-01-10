@@ -46,6 +46,9 @@
     - libssl-dev
     - openssl
     - python-dev
+    - ntp
+
+- service: name=ntp enabled=yes state=started
 
 - name: add atom and sublime ppa's
   apt_repository: repo='ppa:{{ item }}'
