@@ -6,6 +6,10 @@
   with_items:
     - lxde
 
+# to permit shutdown, reboot etc...
+- lineinfile: dest=/etc/pam.d/lxdm line="session required pam_systemd.so"
+
+
 - name: create xorg custom conf
   file: dest=/etc/X11/xorg.conf.d state=directory
 
