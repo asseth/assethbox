@@ -9,3 +9,5 @@ parity_version: stable
 mist_version_deb: Mist-linux32-0-8-8.deb
 mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.8/{{ mist_version_deb }}
 mist_version_url_deb_checksum: cb15122b02f243afd00abd0abd3dec77a6983870f095cb122cc6feb504f224da
+
+go_ipfs_version: v0.4.4
