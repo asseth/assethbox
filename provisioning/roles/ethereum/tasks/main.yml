@@ -55,7 +55,7 @@
     - libxss1
 
 - name: check mist installed
-  stat: path=/usr/local/bin/Mist
+  stat: path=/usr/local/bin/mist
   register: mist_installed
 
 - name: install chromium
