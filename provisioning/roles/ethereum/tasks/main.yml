@@ -6,8 +6,15 @@
     - build-essential
     - libgmp3-dev
 
+
+- name: check go extraction
+  stat: path=/opt/go/bin/go
+  register: go_installed
+
+
 - name : download {{ go }}
   get_url: url=https://storage.googleapis.com/golang/{{ go }}.tar.gz dest=/tmp/{{ go }}.tar.gz validate_certs=no
+  when: not go_installed.stat.exists and not go_installed.stat.exists
 
 - name: check go extraction
   stat: path=/tmp/{{ go }}
