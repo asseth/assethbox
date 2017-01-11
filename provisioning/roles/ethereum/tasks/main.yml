@@ -94,7 +94,7 @@
 
 # Truffle
 
-- name: check mist installed
+- name: check truffle installed
   stat: path=/opt/{{ node_version }}/lib/node_modules/truffle
   register: truffle_installed
 
