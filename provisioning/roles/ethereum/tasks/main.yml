@@ -102,7 +102,15 @@
   command: npm -g install truffle
   when: not truffle_installed.stat.exists
 
-# PARITY
+# Embark
+
+- name: check embark installed
+  stat: path=/opt/{{ node_version }}/lib/node_modules/embark
+  register: embark_installed
+
+- name: install embark
+  command: npm -g install embark
+  when: not embark_installed.stat.exists
 
 - name: check cargo install
   stat: path=/home/vagrant/.cargo/bin/cargo
