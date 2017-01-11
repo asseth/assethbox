@@ -112,17 +112,51 @@
   command: npm -g install embark
   when: not embark_installed.stat.exists
 
-- name: check cargo install
-  stat: path=/home/vagrant/.cargo/bin/cargo
-  register: cargo_installed
+# testrpc
 
-- name : download rust
-  get_url: url=https://static.rust-lang.org/rustup/rustup-init.sh dest=/tmp/rustup-init.sh validate_certs=no
-  when: not cargo_installed.stat.exists
+- name: check testrpc installed
+  stat: path=/opt/{{ node_version }}/lib/node_modules/testrpc
+  register: testrpcjs_installed
 
-- name: install rust
-  command: chdir=/tmp sh rustup-init.sh -y
-  when: not cargo_installed.stat.exists
+- name: install testrpc
+  command: npm -g install ethereumjs-testrpc
+  when: not testrpcjs_installed.stat.exists
 
-- name: Clone parity
-  git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True version={{ parity_version }}
+
+# PARITY
+
+# - name: check cargo install
+#   stat: path=/home/vagrant/.cargo/bin/cargo
+#   register: cargo_installed
+#
+# - name : download rust
+#   get_url: url=https://sh.rustup.rs dest=/tmp/rustup.sh validate_certs=no
+#   when: not cargo_installed.stat.exists
+#
+# - name: install rust
+#   command: chdir=/tmp sh rustup.sh -y
+#   when: not cargo_installed.stat.exists
+#
+# - name: Clone parity
+#   git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True version={{ parity_version }}
+
+# - name: build parity
+#   command: chdir=/opt/parity  /home/vagrant/.cargo/bin/cargo build --release --verbose
+
+# IPFS
+
+- name: check if go ipfs installed extraction
+  stat: path=/usr/local/bin/ipfs
+  register: go_ipfs_installed
+
+- name: download go-ipfs {{  go_ipfs_version  }}
+  get_url: url=https://dist.ipfs.io/go-ipfs/{{  go_ipfs_version  }}/go-ipfs_{{  go_ipfs_version  }}_linux-386.tar.gz dest=/tmp/go_ipfs{{ go_ipfs_version }}.tar.gz validate_certs=no
+  when: not go_ipfs_installed.stat.exists
+
+- name: unarchive go-ipfs {{  go_ipfs_version  }}
+  unarchive: src=/tmp/go_ipfs{{ go_ipfs_version }}.tar.gz dest=/tmp copy=no
+  when: not go_ipfs_installed.stat.exists
+
+- name: install go-ipfs {{  go_ipfs_version  }}
+  command: chdir=/tmp/go-ipfs  mv ipfs /usr/local/bin/ipfs
+  when: not go_ipfs_installed.stat.exists
