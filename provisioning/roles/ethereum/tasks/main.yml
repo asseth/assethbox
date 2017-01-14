@@ -22,7 +22,7 @@
 
 - name: unarchive go
   unarchive: src=/tmp/{{ go }}.tar.gz dest=/opt copy=no
-  when: not go_extracted.stat.exists
+  when: not go_installed.stat.exists and not go_extracted.stat.exists
 
 - name: Clone geth
   git: repo=https://github.com/ethereum/go-ethereum.git dest=/opt/go-ethereum accept_hostkey=True version={{ geth_version }}
