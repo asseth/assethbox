@@ -102,6 +102,17 @@
   command: npm -g install truffle
   when: not truffle_installed.stat.exists
 
+# Dapple
+
+- name: check dapple installed
+  stat: path=/opt/{{ node_version }}/lib/node_modules/dapple
+  register: dapple_installed
+
+- name: install dapple
+  command: npm -g install dapple
+  when: not dapple_installed.stat.exists
+
+
 # Embark
 
 - name: check embark installed
