@@ -8,6 +8,8 @@ Inside the VM (Non-exhaustive):
 * mist
 * populus
 * truffle
+* embark
+* dapple
 
 **Editors**
 
