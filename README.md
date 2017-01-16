@@ -6,10 +6,16 @@ Inside the VM (Non-exhaustive):
 
 * geth
 * mist
+* parity
+* testrpc
 * populus
 * truffle
 * embark
 * dapple
+
+**Decentralized stuff**
+
+* IPFS
 
 **Editors**
 
