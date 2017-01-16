@@ -126,7 +126,7 @@
 # testrpc
 
 - name: check testrpc installed
-  stat: path=/opt/{{ node_version }}/lib/node_modules/testrpc
+  stat: path=/opt/{{ node_version }}/lib/node_modules/ethereumjs-testrpc
   register: testrpcjs_installed
 
 - name: install testrpc
