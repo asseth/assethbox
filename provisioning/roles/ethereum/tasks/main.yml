@@ -146,7 +146,6 @@
 
 - name: install rust
   command: chdir=/tmp /bin/sh rustup.sh -y
-#  sudo: no
   when: not cargo_installed.stat.exists
 
 - name: check parity install
@@ -156,7 +155,7 @@
 - name: Clone parity
   git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True version={{ parity_version }}
 
-- name: build parity - very long 
+- name: build parity - very long
   command: chdir=/opt/parity /root/.cargo/bin/cargo build --release --verbose
   when: not parity_installed.stat.exists
 

@@ -2,7 +2,7 @@
 # vars file for ethereum
 
 go: go1.7.3.linux-386
-geth_version: 2a609af #v1.5.6
+geth_version: da2a22c #v1.5.7
 
 parity_version: stable
 
