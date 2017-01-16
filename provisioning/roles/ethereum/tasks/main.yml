@@ -70,7 +70,8 @@
   when: not mist_installed.stat.exists
 
 - name: install mist
-  command: chdir=/tmp sudo gdebi --non-interactive {{ mist_version_deb }}
+  command: chdir=/tmp gdebi --non-interactive {{ mist_version_deb }}
+  become: true
   when: not mist_installed.stat.exists
 
 # tasks file for populus

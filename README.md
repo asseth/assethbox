@@ -32,6 +32,11 @@ Inside the VM (Non-exhaustive):
 
 * all asseth's github projects are cloned in /home/vagrant/projects
 
+**Note for Mac Users**
+
+* The Mac keyboard configuration is available either :
+    - by editing the file provisioning/roles/devtools/templates/zshrc.j2 before building from sources (see the 3 last lines)
+    - by editing the file /home/vagrant/.zshrc on the VM (see the 3 last lines)
 
 ## Simplest install
 
