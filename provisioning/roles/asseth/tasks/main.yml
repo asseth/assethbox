@@ -12,9 +12,13 @@
   with_items:
   - dao1901
   - workshops
+  - whitepaper
   - yellowpaper
+  - mauvepaper
   - slackit
   - assethbox
+  - ropsten-miner
+  - slackit
 
 - name: Give permissions to vagrant git repo
   file: dest=/home/vagrant/projects owner=vagrant group=vagrant recurse=yes
