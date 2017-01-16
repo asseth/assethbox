@@ -136,22 +136,28 @@
 
 # PARITY
 
-# - name: check cargo install
-#   stat: path=/home/vagrant/.cargo/bin/cargo
-#   register: cargo_installed
-#
-#   get_url: url=https://static.rust-lang.org/rustup/rustup-init.sh dest=/tmp/rustup-init.sh validate_certs=no
-#   when: not cargo_installed.stat.exists
-#
-# - name: install rust
-#   command: chdir=/tmp sh rustup-init.sh -y
-#   when: not cargo_installed.stat.exists
-#
-# - name: Clone parity
-#   git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True version={{ parity_version }}
+- name: check cargo install
+  stat: path=/home/vagrant/.cargo/bin/cargo
+  register: cargo_installed
 
-# - name: build parity
-#   command: chdir=/opt/parity  /home/vagrant/.cargo/bin/cargo build --release --verbose
+- get_url: url=https://sh.rustup.rs dest=/tmp/rustup.sh validate_certs=no
+  when: not cargo_installed.stat.exists
+
+- name: install rust
+  command: chdir=/tmp /bin/sh rustup.sh -y
+  sudo: no
+  when: not cargo_installed.stat.exists
+
+- name: check parity install
+  stat: path=/opt/parity/target/release/parity
+  register: parity_installed
+
+- name: Clone parity
+  git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True version={{ parity_version }}
+
+- name: build parity
+  command: chdir=/opt/parity  /home/vagrant/.cargo/bin/cargo build --release --verbose
+  when: not parity_installed.stat.exists
 
 # IPFS
 
