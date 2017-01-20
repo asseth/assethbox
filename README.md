@@ -46,11 +46,21 @@ Inside the VM (Non-exhaustive):
 
 ## Simplest install
 
+### Get the image
+
 Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_0.6.0.ova) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
 
+### Login
+
 user: vagrant
 password: vagrant
+
+### Signatures
+
+    MD5 31afde6c48f9f8b0deb99e7920e7e0d8  assethbox_0.6.1.ova
+    SHA1 ee5c11c08b93781990df086caceede32d8a65de1  assethbox_0.6.1.ova
+    SHA256 b2e2f57ccb71a2791bb331080b42a17474ab905e22122ce4aad393a0d3d8b54c  assethbox_0.6.1.ova
 
 ## Build from sources
 
