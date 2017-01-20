@@ -48,7 +48,7 @@ Inside the VM (Non-exhaustive):
 
 ### Get the image
 
-Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_0.6.0.ova) and import it in virtualbox
+Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_0.6.1.ova) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
 
 ### Login
