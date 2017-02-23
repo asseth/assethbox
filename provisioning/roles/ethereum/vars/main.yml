@@ -1,13 +1,14 @@
 ---
 # vars file for ethereum
 
-go: go1.7.3.linux-386
+go: go1.7.5.linux-amd64
+
 geth_version: da2a22c #v1.5.7
 
 parity_version: d2e6fc0 #v1.5.0
 
-mist_version_deb: Mist-linux32-0-8-8.deb
+mist_version_deb: Mist-linux64-0-8-8.deb
 mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.8/{{ mist_version_deb }}
-mist_version_url_deb_checksum: cb15122b02f243afd00abd0abd3dec77a6983870f095cb122cc6feb504f224da
+mist_version_url_deb_checksum: bb1ab148db979e29e179bcbadf9cf626d128e7a140a15c403891ac626b5601a4
 
 go_ipfs_version: v0.4.4

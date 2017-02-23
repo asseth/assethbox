@@ -166,7 +166,7 @@
   register: go_ipfs_installed
 
 - name: download go-ipfs {{  go_ipfs_version  }}
-  get_url: url=https://dist.ipfs.io/go-ipfs/{{  go_ipfs_version  }}/go-ipfs_{{  go_ipfs_version  }}_linux-386.tar.gz dest=/tmp/go_ipfs{{ go_ipfs_version }}.tar.gz validate_certs=no
+  get_url: url=https://dist.ipfs.io/go-ipfs/{{  go_ipfs_version  }}/go-ipfs_{{  go_ipfs_version  }}_linux-amd64.tar.gz dest=/tmp/go_ipfs{{ go_ipfs_version }}.tar.gz validate_certs=no
   when: not go_ipfs_installed.stat.exists
 
 - name: unarchive go-ipfs {{  go_ipfs_version  }}
