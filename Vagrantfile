@@ -3,13 +3,15 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/trusty32"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "asseth"
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
-    vb.memory = "2048"
+    vb.memory = "4096"
     vb.name = "asseth"
+    vb.cpus = 2
+    vb.customize ["modifyvm", :id, "--vram", "128"]
   end
 
   config.vm.network "forwarded_port", guest: 30303, host: 30303
