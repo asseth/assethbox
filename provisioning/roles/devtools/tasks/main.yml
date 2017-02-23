@@ -123,11 +123,11 @@
   register: slack_installed
 
 - name : download slack
-  get_url: url=https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.2-i386.deb dest=/tmp/slack-desktop-2.1.2-i386.deb validate_certs=no
+  get_url: url=https://downloads.slack-edge.com/linux_releases/{{ slack_version }} dest=/tmp/{{ slack_version }} validate_certs=no
   when: not slack_installed.stat.exists
-  
+
 - name: install slack
-  command: gdebi -n /tmp/slack-desktop-2.1.2-i386.deb
+  command: gdebi -n /tmp/{{ slack_version }}
   become: yes
   when: not slack_installed.stat.exists
 
@@ -138,20 +138,20 @@
   register: npm_installed
 
 - name : download node
-  get_url: url=https://nodejs.org/dist/v6.9.1/{{ node_version }}.tar.xz dest=/tmp/node-v6.9.1-linux-x86.tar.xz validate_certs=no
+  get_url: url=https://nodejs.org/dist/{{ node_version }}/node-{{ node_version }}-linux-x64.tar.xz dest=/tmp/node-{{ node_version }}-linux-x64.tar.xz validate_certs=no
   when: not npm_installed.stat.exists
 
 - name: unarchive node
-  unarchive: src=/tmp/{{ node_version }}.tar.xz dest=/tmp copy=no
+  unarchive: src=/tmp/node-{{ node_version }}-linux-x64.tar.xz dest=/tmp copy=no
   when: not npm_installed.stat.exists
 
 - name: move node directory to /opt
-  command: mv /tmp/{{ node_version }} /opt
+  command: mv /tmp/node-{{ node_version }}-linux-x64 /opt
   when: not npm_installed.stat.exists
 
 - name: symlink node and npm
   file:
-    src: /opt/{{ node_version }}/bin/{{ item }}
+    src: /opt/node-{{ node_version }}-linux-x64/bin/{{ item }}
     dest: /usr/local/bin/{{ item }}
     owner: root
     group: root
