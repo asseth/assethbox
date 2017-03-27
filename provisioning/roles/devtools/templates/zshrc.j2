@@ -17,7 +17,7 @@ ZSH_THEME="gnzh"
 plugins=(git virtualenv virtualenvwrapper ssh)
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/opt/go/bin:/opt/go-ethereum/build/bin:/opt/node-v6.9.1-linux-x86/bin/:/home/vagrant/.cargo/bin:/opt/parity/target/release"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/opt/go/bin:/opt/go-ethereum/build/bin:/opt/node-{{ node_version }}-linux-x64/bin/:/home/vagrant/.cargo/bin:/opt/parity/target/release"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
