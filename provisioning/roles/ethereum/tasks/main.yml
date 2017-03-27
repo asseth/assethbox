@@ -96,7 +96,7 @@
 # Truffle
 
 - name: check truffle installed
-  stat: path=/opt/{{ node_version }}/lib/node_modules/truffle
+  stat: path=/opt/node-{{ node_version }}-linux-x64/lib/node_modules/truffle
   register: truffle_installed
 
 - name: install truffle
@@ -106,7 +106,7 @@
 # Dapple
 
 - name: check dapple installed
-  stat: path=/opt/{{ node_version }}/lib/node_modules/dapple
+  stat: path=/opt/node-{{ node_version }}-linux-x64/lib/node_modules/dapple
   register: dapple_installed
 
 - name: install dapple
@@ -117,7 +117,7 @@
 # Embark
 
 - name: check embark installed
-  stat: path=/opt/{{ node_version }}/lib/node_modules/embark
+  stat: path=/opt/node-{{ node_version }}-linux-x64/lib/node_modules/embark
   register: embark_installed
 
 - name: install embark
@@ -127,7 +127,7 @@
 # testrpc
 
 - name: check testrpc installed
-  stat: path=/opt/{{ node_version }}/lib/node_modules/ethereumjs-testrpc
+  stat: path=/opt/node-{{ node_version }}-linux-x64/lib/node_modules/ethereumjs-testrpc
   register: testrpcjs_installed
 
 - name: install testrpc
