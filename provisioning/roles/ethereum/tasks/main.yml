@@ -137,26 +137,21 @@
 
 # PARITY
 
-- name: check cargo install
-  stat: path=/root/.cargo/bin/cargo
-  register: cargo_installed
-
-- get_url: url=https://sh.rustup.rs dest=/tmp/rustup.sh validate_certs=no
-  when: not cargo_installed.stat.exists
-
-- name: install rust
-  command: chdir=/tmp /bin/sh rustup.sh -y
-  when: not cargo_installed.stat.exists
-
-- name: check parity install
-  stat: path=/opt/parity/target/release/parity
+- name: check parity installed
+  stat: path=/usr/bin/parity
   register: parity_installed
 
-- name: Clone parity
-  git: repo=https://github.com/ethcore/parity.git dest=/opt/parity recursive=yes accept_hostkey=True version={{ parity_version }}
+- name : download parity package
+  get_url:
+    url=http://d1h4xl4cr1h0mo.cloudfront.net/beta/x86_64-unknown-linux-gnu/{{ parity_deb }}
+    dest=/tmp/
+    validate_certs=no
+    checksum="md5:{{ parity_deb_checksum }}"
+  when: not parity_installed.stat.exists
 
-- name: build parity - very long
-  command: chdir=/opt/parity /root/.cargo/bin/cargo build --release --verbose
+- name: install parity
+  command: chdir=/tmp gdebi --non-interactive {{ parity_deb }}
+  become: true
   when: not parity_installed.stat.exists
 
 # IPFS
