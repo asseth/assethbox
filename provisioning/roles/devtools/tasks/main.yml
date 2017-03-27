@@ -134,7 +134,7 @@
 # NPM
 
 - name: check slack installed
-  stat: path=/opt/{{ node_version }}/bin/npm
+  stat: path=/opt/node-{{ node_version }}-linux-x64/bin/npm
   register: npm_installed
 
 - name : download node
@@ -146,7 +146,7 @@
   when: not npm_installed.stat.exists
 
 - name: move node directory to /opt
-  command: mv /tmp/node-{{ node_version }}-linux-x64 /opt
+  command: mv /tmp/node-{{ node_version }}-linux-x64 /opt/
   when: not npm_installed.stat.exists
 
 - name: symlink node and npm
