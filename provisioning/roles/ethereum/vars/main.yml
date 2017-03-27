@@ -3,12 +3,17 @@
 
 go: go1.7.5.linux-amd64
 
-geth_version: da2a22c #v1.5.7
+geth_version: a07539f #v1.5.9
 
-parity_version: d2e6fc0 #v1.5.0
+#parity_version: d2e6fc0 #v1.5.0
 
-mist_version_deb: Mist-linux64-0-8-8.deb
-mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.8/{{ mist_version_deb }}
-mist_version_url_deb_checksum: bb1ab148db979e29e179bcbadf9cf626d128e7a140a15c403891ac626b5601a4
+parity_deb: parity_1.6.4_amd64.deb
+parity_deb_checksum: 96120279be18411d6a8d8ca8d90dadcd
 
-go_ipfs_version: v0.4.4
+mist_version_deb: Mist-linux64-0-8-9.deb
+mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.9/{{ mist_version_deb }}
+mist_version_url_deb_checksum: 9657a9261e25173087eda29499db88aed7adcb4344ead914eaa692093c55ba62
+
+go_ipfs_version: v0.4.5
+
+populus_version: 1.6.6
