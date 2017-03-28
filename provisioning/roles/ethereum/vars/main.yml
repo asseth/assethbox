@@ -7,8 +7,10 @@ geth_version: a07539f #v1.5.9
 
 #parity_version: d2e6fc0 #v1.5.0
 
-parity_deb: parity_1.6.4_amd64.deb
-parity_deb_checksum: 96120279be18411d6a8d8ca8d90dadcd
+
+parity_version: 1.6.5
+parity_deb: parity_{{ parity_version }}_amd64.deb
+parity_deb_checksum: 91b4355f4daa03dee68699d0f105030a
 
 mist_version_deb: Mist-linux64-0-8-9.deb
 mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.9/{{ mist_version_deb }}

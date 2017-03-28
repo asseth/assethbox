@@ -143,7 +143,7 @@
 
 - name : download parity package
   get_url:
-    url=http://d1h4xl4cr1h0mo.cloudfront.net/beta/x86_64-unknown-linux-gnu/{{ parity_deb }}
+    url=http://d1h4xl4cr1h0mo.cloudfront.net/v{{ parity_version }}/x86_64-unknown-linux-gnu/{{ parity_deb }}
     dest=/tmp/
     validate_certs=no
     checksum="md5:{{ parity_deb_checksum }}"
