@@ -1,4 +1,4 @@
-Assethbox is a virtual machine provided by Asseth non-profit organization.
+Assethbox is a 64bits virtual machine provided by Asseth non-profit organization.
 
 Inside the VM (Non-exhaustive):
 
@@ -48,19 +48,19 @@ Inside the VM (Non-exhaustive):
 
 ### Get the image
 
-Download the .ova file  [here](https://s3-eu-west-1.amazonaws.com/asseth/assethbox/assethbox_0.6.1.ova) and import it in virtualbox
+Download the .ova file  [here](https://1drv.ms/u/s!Als1s-upPTKViinAEOrDXI3YZYM6) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
+
+### Checksum
+
+    MD5 5a0e4b7b5f8e12c857949c1cbfe02529  assethbox_0.7.1.ova
+    SHA1 46d440858c508c43ee39eafca9bcc006c03f8d99  assethbox_0.7.1.ova
+    SHA256 ce817c9ff77cf2f3bade5af50dd63f4f6a198e3201853f6306a34a9653bedd0f  assethbox_0.7.1.ova
 
 ### Login
 
 user: vagrant
 password: vagrant
-
-### Signatures
-
-    MD5 31afde6c48f9f8b0deb99e7920e7e0d8  assethbox_0.6.1.ova
-    SHA1 ee5c11c08b93781990df086caceede32d8a65de1  assethbox_0.6.1.ova
-    SHA256 b2e2f57ccb71a2791bb331080b42a17474ab905e22122ce4aad393a0d3d8b54c  assethbox_0.6.1.ova
 
 ## Build from sources
 
