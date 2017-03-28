@@ -171,3 +171,10 @@
 - name: install go-ipfs {{  go_ipfs_version  }}
   command: chdir=/tmp/go-ipfs  mv ipfs /usr/local/bin/ipfs
   when: not go_ipfs_installed.stat.exists
+
+# To remove when sublimepackages module is fixed
+- name: Get SublimeEthereum from git
+  git: repo=https://github.com/davidhq/SublimeEthereum.git dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum accept_hostkey=True update=no
+
+- name: Give SublimeEthereum permissions for vagrant
+  file: dest=/home/vagrant/.config/sublime-text-3/Packages/SublimeEthereum owner=vagrant group=vagrant recurse=yes
