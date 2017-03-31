@@ -20,7 +20,14 @@ Inside the VM (Non-exhaustive):
 **Editors**
 
 * vim with solidity syntax
-* sublime-text-3 with solidity syntax
+* sublime-text-3 with following packages :
+  - "Ethereum" _solidity syntax_
+  - "GitSavvy" _git and GitHub integration_
+  - "Pretty JSON" _JSON plugin_
+  - "Markdown Preview" _Markdown2html generator_
+  - "MarkdownEditing" _Markdown syntax_
+
+  **NB** : restart sublime Text at first use to complete the packages activation via Package Control.
 
 **Useful common tools for developers**
 
