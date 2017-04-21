@@ -18,4 +18,4 @@ mist_version_url_deb_checksum: 9657a9261e25173087eda29499db88aed7adcb4344ead914e
 
 go_ipfs_version: v0.4.7
 
-populus_version: 1.6.6
+populus_version: 1.6.8
