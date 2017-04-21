@@ -5,9 +5,6 @@ go: go1.7.5.linux-amd64
 
 geth_version: facc47cb #v1.6.0
 
-#parity_version: d2e6fc0 #v1.5.0
-
-
 parity_version: 1.6.5
 parity_deb: parity_{{ parity_version }}_amd64.deb
 parity_deb_checksum: 91b4355f4daa03dee68699d0f105030a
