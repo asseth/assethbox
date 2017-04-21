@@ -3,7 +3,7 @@
 
 go: go1.7.5.linux-amd64
 
-geth_version: a07539f #v1.5.9
+geth_version: facc47cb #v1.6.0
 
 #parity_version: d2e6fc0 #v1.5.0
 
