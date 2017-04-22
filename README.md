@@ -55,14 +55,18 @@ Inside the VM (Non-exhaustive):
 
 ### Get the image
 
-Download the .ova file  [here](https://1drv.ms/u/s!Als1s-upPTKViinAEOrDXI3YZYM6) and import it in virtualbox
+Download the .ova file  [here](https://1drv.ms/u/s!AFs1s-upPTKViio) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
 
 ### Checksum
 
-    MD5 5a0e4b7b5f8e12c857949c1cbfe02529  assethbox_0.7.1.ova
-    SHA1 46d440858c508c43ee39eafca9bcc006c03f8d99  assethbox_0.7.1.ova
-    SHA256 ce817c9ff77cf2f3bade5af50dd63f4f6a198e3201853f6306a34a9653bedd0f  assethbox_0.7.1.ova
+    MD5
+    a2f4855e8bc68e2a15c39f0a2b531bb4  assethbox_v0.7.2.ova
+    SHA1
+    b5cff27ed48394195ecee8ccb1f36909f066b68f  assethbox_v0.7.2.ova
+    SHA256
+    288d8f47457baedb1fa6549baece77c516b1ce657b12684417b7840be833b239  assethbox_v0.7.2.ova
+
 
 ### Login
 
@@ -82,4 +86,6 @@ To trash the VM, from your host, in the assethbox folder:
 
 ## Generate .ova file from build
 
+    vagrant up
+    vagrant halt
     vboxmanage export asseth -o assethbox_YOUR_VERSION.ova
