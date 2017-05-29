@@ -3,7 +3,7 @@
 
 go: go1.7.5.linux-amd64
 
-geth_version: facc47cb #v1.6.0
+geth_version: 021c3c2 #v1.6.1
 
 parity_version: 1.6.5
 parity_deb: parity_{{ parity_version }}_amd64.deb
