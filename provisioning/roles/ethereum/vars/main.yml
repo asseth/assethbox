@@ -13,6 +13,6 @@ mist_version_deb: Mist-linux64-0-8-10.deb
 mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.10/{{ mist_version_deb }}
 mist_version_url_deb_checksum: ee718aeb50558c3877466d7649507025
 
-go_ipfs_version: v0.4.7
+go_ipfs_version: v0.4.9 
 
 populus_version: 1.6.8
