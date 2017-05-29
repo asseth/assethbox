@@ -3,7 +3,7 @@
   become: yes
   roles:
     - devtools
-    - sublimepackages
+    #- sublimepackages
     - ethereum
     - asseth
     - permissions
