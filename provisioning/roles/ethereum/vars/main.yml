@@ -5,9 +5,9 @@ go: go1.7.5.linux-amd64
 
 geth_version: 021c3c2 #v1.6.1
 
-parity_version: 1.6.5
+parity_version: 1.6.6
 parity_deb: parity_{{ parity_version }}_amd64.deb
-parity_deb_checksum: 91b4355f4daa03dee68699d0f105030a
+parity_deb_checksum: 40d573218449915fb88064d0eb824c3a
 
 mist_version_deb: Mist-linux64-0-8-9.deb
 mist_version_url_deb: https://github.com/ethereum/mist/releases/download/v0.8.9/{{ mist_version_deb }}
