@@ -66,7 +66,7 @@
     url={{ mist_version_url_deb }}
     dest=/tmp/
     validate_certs=no
-    checksum="sha256:{{ mist_version_url_deb_checksum }}"
+    checksum="md5:{{ mist_version_url_deb_checksum }}"
   when: not mist_installed.stat.exists
 
 - name: install mist
