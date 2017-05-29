@@ -100,7 +100,7 @@
   register: truffle_installed
 
 - name: install truffle
-  command: npm -g install truffle
+  command: npm -g install truffle --unsafe-perm
   when: not truffle_installed.stat.exists
 
 # Dapple
