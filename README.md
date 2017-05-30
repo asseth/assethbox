@@ -55,7 +55,7 @@ Inside the VM (Non-exhaustive):
 
 ### Get the image
 
-Download the .ova file  [here](https://1drv.ms/u/s!AFs1s-upPTKViis) and import it in virtualbox
+Download the .ova file  [here](https://mega.nz/#!grZlVRTB!p_u5OcE1iFY0XJtYbrS7xqlnIZftYdkD0tr7epCDSYg) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
 
 ### Checksum
