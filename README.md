@@ -37,7 +37,7 @@ Inside the VM (Non-exhaustive):
 * terminal : terminator with plugins (git, virtualenv, virtualenvwrapper, ssh)
 * python : v2.7, v3.5, headers provided by python-dev
 * chat : slack
-* web : curl, wget, firefox
+* web : curl, wget, firefox, chromium
 * crypto : openssl
 * nodejs: node, npm
 
@@ -55,7 +55,7 @@ Inside the VM (Non-exhaustive):
 
 ### Get the image
 
-Download the .ova file  [here](https://1drv.ms/u/s!AFs1s-upPTKViio) and import it in virtualbox
+Download the .ova file  [here](https://1drv.ms/u/s!AFs1s-upPTKViis) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
 
 ### Checksum
