@@ -55,17 +55,17 @@ Inside the VM (Non-exhaustive):
 
 ### Get the image
 
-Download the .ova file  [here](https://mega.nz/#!grZlVRTB!p_u5OcE1iFY0XJtYbrS7xqlnIZftYdkD0tr7epCDSYg) and import it in virtualbox
+Download the .ova file  [here](https://drive.google.com/open?id=0B8rZeDVmrvHGcEtMLTVIT0RWTzA) or [here](https://mega.nz/#!grZlVRTB!p_u5OcE1iFY0XJtYbrS7xqlnIZftYdkD0tr7epCDSYg) and import it in virtualbox
 Import it in virtualbox ('File/Import...')
 
 ### Checksum
 
     MD5
-    a2f4855e8bc68e2a15c39f0a2b531bb4  assethbox_v0.7.2.ova
+    969817f1554c1ddae2a6c4082702220c  assethbox_0.7.3.ova
     SHA1
-    b5cff27ed48394195ecee8ccb1f36909f066b68f  assethbox_v0.7.2.ova
+    3c41c076c3dce3dcc1b8ccede47a897dc8ef5365  assethbox_0.7.3.ova
     SHA256
-    288d8f47457baedb1fa6549baece77c516b1ce657b12684417b7840be833b239  assethbox_v0.7.2.ova
+    0b51762e0b8cb225fd01204f0ab85f3829385eb428fc48bf52cfbcdaca8e83d7  assethbox_0.7.3.ova
 
 
 ### Login
