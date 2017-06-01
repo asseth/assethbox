@@ -17,17 +17,10 @@ Inside the VM (Non-exhaustive):
 
 * IPFS
 
-**Editors**
+**Editors with solidity syntax**
 
 * vim with solidity syntax
-* sublime-text-3 with following packages :
-  - "Ethereum" _solidity syntax_
-  - "GitSavvy" _git and GitHub integration_
-  - "Pretty JSON" _JSON plugin_
-  - "Markdown Preview" _Markdown2html generator_
-  - "MarkdownEditing" _Markdown syntax_
-
-  **NB** : restart sublime Text at first use to complete the packages activation via Package Control.
+* sublime-text-3
 
 **Useful common tools for developers**
 
@@ -44,12 +37,6 @@ Inside the VM (Non-exhaustive):
 **Projects**
 
 * all asseth's github projects are cloned in /home/vagrant/projects
-
-**Note for Mac Users**
-
-* The Mac keyboard configuration is available either :
-    - by editing the file provisioning/roles/devtools/templates/zshrc.j2 before building from sources (see the 3 last lines)
-    - by editing the file /home/vagrant/.zshrc on the VM (see the 3 last lines)
 
 ## Simplest install
 
@@ -89,3 +76,10 @@ To trash the VM, from your host, in the assethbox folder:
     vagrant up
     vagrant halt
     vboxmanage export asseth -o assethbox_YOUR_VERSION.ova
+    
+
+## Note for Mac Users**
+
+* The Mac keyboard configuration is available either :
+    - by editing the file provisioning/roles/devtools/templates/zshrc.j2 before building from sources (see the 3 last lines)
+    - by editing the file /home/vagrant/.zshrc on the VM (see the 3 last lines)
