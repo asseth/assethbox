@@ -24,9 +24,10 @@ Vagrant.configure("2") do |config|
 
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    sudo apt-get install -y cowsay sshpass language-pack-fr python-pip
-    sudo pip install markupsafe ansible
+    sudo apt-add-repository ppa:ansible/ansible
+    sudo apt-get update
+    sudo apt-get install -y software-properties-common cowsay sshpass language-pack-fr python-pip ansible
+    sudo pip install markupsafe
     su - vagrant -c 'ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -q -N ""'
     su - vagrant -c 'cat /home/vagrant/.ssh/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys'
     su - vagrant -c 'echo StrictHostKeyChecking no >> /home/vagrant/.ssh/config'
