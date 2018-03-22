@@ -66,6 +66,7 @@ Import it in virtualbox ('File/Import...'), or just double-click on it and follo
 
 user: vagrant
 password: vagrant
+<br/>
 
 ## Build from sources
 
@@ -77,13 +78,14 @@ To trash the VM, from your host, in the assethbox folder:
 
     vagrant halt && vagrant destroy
     rm -rf .vagrant
+<br/>
 
 ## Generate .ova file from build
 
     vagrant up
     vagrant halt
     vboxmanage export asseth -o assethbox_YOUR_VERSION.ova
-    
+<br/>
 
 ## Note for Mac Users**
 
