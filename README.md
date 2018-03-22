@@ -1,8 +1,11 @@
+# Assethbox
+
+### What is Assethbox ?
 Assethbox is a 64bits virtual machine provided by Asseth non-profit organization.
 
-Inside the VM (Non-exhaustive):
+### What is included ?
 
-**Ethereum**
+**Ethereum tools**
 
 * geth
 * mist
@@ -12,15 +15,18 @@ Inside the VM (Non-exhaustive):
 * truffle
 * embark
 * dapple
+<br/>
 
 **Decentralized stuff**
 
 * IPFS
+<br/>
 
 **Editors with solidity syntax**
 
 * vim with solidity syntax
 * sublime-text-3
+<br/>
 
 **Useful common tools for developers**
 
@@ -33,17 +39,19 @@ Inside the VM (Non-exhaustive):
 * web : curl, wget, firefox, chromium
 * crypto : openssl
 * nodejs: node, npm
+<br/>
 
 **Projects**
 
 * all asseth's github projects are cloned in /home/vagrant/projects
+<br/>
 
-## Simplest install
+## Use pre-built ova file
 
 ### Get the image
 
 Download the .ova file  [here](https://drive.google.com/open?id=0B8rZeDVmrvHGcEtMLTVIT0RWTzA) or [here](https://mega.nz/#!grZlVRTB!p_u5OcE1iFY0XJtYbrS7xqlnIZftYdkD0tr7epCDSYg) and import it in virtualbox
-Import it in virtualbox ('File/Import...')
+Import it in virtualbox ('File/Import...'), or just double-click on it and follow the instructions
 
 ### Checksum
 
@@ -53,7 +61,6 @@ Import it in virtualbox ('File/Import...')
     3c41c076c3dce3dcc1b8ccede47a897dc8ef5365  assethbox_0.7.3.ova
     SHA256
     0b51762e0b8cb225fd01204f0ab85f3829385eb428fc48bf52cfbcdaca8e83d7  assethbox_0.7.3.ova
-
 
 ### Login
 
