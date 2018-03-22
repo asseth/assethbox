@@ -66,6 +66,7 @@ Import it in virtualbox ('File/Import...'), or just double-click on it and follo
 
 user: vagrant
 password: vagrant
+
 <br/>
 
 ## Build from sources
