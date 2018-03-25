@@ -5,3 +5,6 @@
   apt: pkg={{ item }} state=present
   with_items:
     - htop
+
+- name: Install testinfra
+  pip: name=testinfra
