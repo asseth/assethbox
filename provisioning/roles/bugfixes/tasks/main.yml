@@ -1,6 +1,0 @@
-- name: Bug fix \#3 issue shutdown not functionnal, appending line "session required pam_systemd.so"
-  lineinfile:
-    dest: /etc/pam.d/lxdm
-    insertafter: EOF
-    line: 'session required pam_systemd.so'
-  tags: bugfix

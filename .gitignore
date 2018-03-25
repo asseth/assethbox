@@ -1,2 +1,3 @@
 .vagrant/*
 assethbox_*
+*.log

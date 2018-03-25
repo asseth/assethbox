@@ -1,5 +1,0 @@
----
-# tasks file for permissions
-
-- name: Give .config permissions for .config
-  file: dest=/home/vagrant/.config owner=vagrant group=vagrant recurse=yes

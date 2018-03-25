@@ -1,5 +1,0 @@
----
-# vars file for devtools
-
-slack_version: slack-desktop-2.6.2-amd64.deb
-node_version: v7.10.0
