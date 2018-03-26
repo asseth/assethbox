@@ -5,9 +5,24 @@
   apt: pkg={{ item }} state=present
   with_items:
     - htop
+    - zsh
 
 - name: Install testinfra
   pip: name=testinfra
+
+# zsh conf
+
+- name: zsh default shell
+  user: name=vagrant shell=/usr/bin/zsh
+
+- name: Get oh-my-zsh from git
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh accept_hostkey=True update=no
+
+- name: Give oh-my-zsh permissions for vagrant
+  file: dest=/home/vagrant/.oh-my-zsh owner=vagrant group=vagrant recurse=yes
+
+- name: Zsh conf
+  template: src=zshrc.j2 dest=/home/vagrant/.zshrc owner=vagrant group=vagrant
 
 # node
 
