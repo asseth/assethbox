@@ -23,6 +23,8 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y xubuntu-desktop virtualbox-guest-x11 virtualbox-guest-dkms software-properties-common cowsay sshpass language-pack-fr python-pip ansible
     sudo pip install --upgrade pip
     sudo pip install markupsafe
+    sudo apt-get install -y python3-pip
+    #sudo pip3 install --upgrade pip
     su - vagrant -c 'ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -q -N ""'
     su - vagrant -c 'cat /home/vagrant/.ssh/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys'
     su - vagrant -c 'echo StrictHostKeyChecking no >> /home/vagrant/.ssh/config'

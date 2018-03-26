@@ -1,5 +1,4 @@
 ---
-# Install geth
 
 - name: install requirements for geth
   apt: pkg=software-properties-common state=present
@@ -10,8 +9,24 @@
 - name: install geth
   apt: pkg=ethereum state=present
 
-
-# install parity
+- name: check parity installed
+  stat: path=/snap/bin/parity
+  register: parity_installed
 
 - name: install parity
   command: snap install parity
+  when: not parity_installed.stat.exists
+
+- name: install requirements for populus
+  apt: pkg={{ item }} state=present
+  with_items:
+    - libssl-dev
+
+- name: Install populus
+  pip: name=populus executable=pip3
+
+- name: Upgrade web3 (fix populus) # temporary fix for populus waiting for a fix https://github.com/ethereum/populus/issues/450
+  pip:
+    executable: pip3
+    name: pip
+    extra_args: --upgrade web3
