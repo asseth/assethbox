@@ -30,3 +30,11 @@
     executable: pip3
     name: pip
     extra_args: --upgrade web3
+
+- name: check truffle installed
+  stat: path=/opt/node-{{ node_version }}-linux-x64/lib/node_modules/truffle
+  register: truffle_installed
+
+- name: install truffle
+  command: npm -g install truffle --unsafe-perm
+  when: not truffle_installed.stat.exists
