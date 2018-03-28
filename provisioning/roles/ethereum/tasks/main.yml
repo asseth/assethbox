@@ -38,3 +38,11 @@
 - name: install truffle
   command: npm -g install truffle --unsafe-perm
   when: not truffle_installed.stat.exists
+
+- name: check ganache_cli installed
+  stat: path=/opt/node-{{ node_version }}-linux-x64/lib/node_modules/ganache-cli
+  register: ganache_cli_installed
+
+- name: install ganache-cli
+  command: npm -g install ganache-cli
+  when: not ganache_cli_installed.stat.exists
